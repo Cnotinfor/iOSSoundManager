@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		AB6678F9133256E9001D8BA4 /* MelodyPlayingThread.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6678F7133256E9001D8BA4 /* MelodyPlayingThread.m */; };
+		AB66791013325790001D8BA4 /* Source.m in Sources */ = {isa = PBXBuildFile; fileRef = AB66790E13325790001D8BA4 /* Source.m */; };
+		AB81ED031331029900C13825 /* MyOpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = AB81ECF31331029900C13825 /* MyOpenALSupport.c */; };
+		AB81ED061331029900C13825 /* Buffer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB81ECF61331029900C13825 /* Buffer.m */; };
+		AB81ED071331029900C13825 /* CnotiAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = AB81ECF71331029900C13825 /* CnotiAudio.h */; };
+		AB81ED0A1331029900C13825 /* Note.h in Headers */ = {isa = PBXBuildFile; fileRef = AB81ECFA1331029900C13825 /* Note.h */; };
+		AB81ED0C1331029900C13825 /* SoundManagerCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AB81ECFC1331029900C13825 /* SoundManagerCore.m */; };
+		AB81ED0E1331029900C13825 /* SoundManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AB81ECFE1331029900C13825 /* SoundManager.h */; };
+		AB81ED0F1331029900C13825 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB81ECFF1331029900C13825 /* SoundManager.m */; };
+		AB81ED111331029900C13825 /* SoundPlayingThread.m in Sources */ = {isa = PBXBuildFile; fileRef = AB81ED011331029900C13825 /* SoundPlayingThread.m */; };
+		AB81ED4B1331064C00C13825 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB81ED4A1331064C00C13825 /* OpenAL.framework */; };
+		AB81EDCD1331149100C13825 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB81EDCC1331149100C13825 /* CoreFoundation.framework */; };
+		AB8DF402133AB8C800259B30 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DF401133AB8C800259B30 /* Note.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA747D9E0F9514B9006C5449 /* SoundManagerIOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManagerIOS_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB6678F6133256E9001D8BA4 /* MelodyPlayingThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MelodyPlayingThread.h; sourceTree = "<group>"; };
+		AB6678F7133256E9001D8BA4 /* MelodyPlayingThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MelodyPlayingThread.m; sourceTree = "<group>"; };
+		AB66790D13325790001D8BA4 /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Source.h; sourceTree = "<group>"; };
+		AB66790E13325790001D8BA4 /* Source.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Source.m; sourceTree = "<group>"; };
+		AB81ECF31331029900C13825 /* MyOpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MyOpenALSupport.c; sourceTree = "<group>"; };
+		AB81ECF41331029900C13825 /* MyOpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOpenALSupport.h; sourceTree = "<group>"; };
+		AB81ECF51331029900C13825 /* Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buffer.h; sourceTree = "<group>"; };
+		AB81ECF61331029900C13825 /* Buffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buffer.m; sourceTree = "<group>"; };
+		AB81ECF71331029900C13825 /* CnotiAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CnotiAudio.h; sourceTree = "<group>"; };
+		AB81ECFA1331029900C13825 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		AB81ECFB1331029900C13825 /* SoundManagerCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManagerCore.h; sourceTree = "<group>"; };
+		AB81ECFC1331029900C13825 /* SoundManagerCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManagerCore.m; sourceTree = "<group>"; };
+		AB81ECFD1331029900C13825 /* SoundManagerIOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManagerIOS_Prefix.pch; sourceTree = "<group>"; };
+		AB81ECFE1331029900C13825 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		AB81ECFF1331029900C13825 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
+		AB81ED001331029900C13825 /* SoundPlayingThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundPlayingThread.h; sourceTree = "<group>"; };
+		AB81ED011331029900C13825 /* SoundPlayingThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPlayingThread.m; sourceTree = "<group>"; };
+		AB81ED021331029900C13825 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		AB81ED4A1331064C00C13825 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		AB81EDCC1331149100C13825 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		AB8DF328133A92C400259B30 /* Untitled-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Untitled-Info.plist"; sourceTree = "<group>"; };
+		AB8DF401133AB8C800259B30 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		ABEF327E13336861001108CF /* TouchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchNode.h; sourceTree = "<group>"; };
+		ABEF327F13336861001108CF /* TouchNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchNode.m; sourceTree = "<group>"; };
+		ABEF6C8813336A66001108CF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ABEF6C8913336A66001108CF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ABEF6C8A13336A66001108CF /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		ABEF6C8B13336A66001108CF /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
+		ABEF6D3C13336E82001108CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		ABEF6FD513336FAC001108CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ABEF6FD713336FAC001108CF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		ABEF6FD913336FAC001108CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ABFBBF6C1333593C0019C8A5 /* MelodyTesting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MelodyTesting-Info.plist"; sourceTree = "<group>"; };
+		ABFBBF7713335A160019C8A5 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		D2AAC07E0554694100DB518D /* libSoundManagerIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSoundManagerIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				AB81ED4B1331064C00C13825 /* OpenAL.framework in Frameworks */,
+				AB81EDCD1331149100C13825 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libSoundManagerIOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* SoundManagerIOS */ = {
+			isa = PBXGroup;
+			children = (
+				ABFBBF70133359860019C8A5 /* examples */,
+				08FB77AEFE84172EC02AAC07 /* src */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				ABFBBF6C1333593C0019C8A5 /* MelodyTesting-Info.plist */,
+				AB8DF328133A92C400259B30 /* Untitled-Info.plist */,
+			);
+			name = SoundManagerIOS;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABEF6D3C13336E82001108CF /* UIKit.framework */,
+				AB81ED4A1331064C00C13825 /* OpenAL.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				AB81EDCC1331149100C13825 /* CoreFoundation.framework */,
+				ABEF6FD513336FAC001108CF /* CoreGraphics.framework */,
+				ABEF6FD713336FAC001108CF /* OpenGLES.framework */,
+				ABEF6FD913336FAC001108CF /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				AB81ECF21331029900C13825 /* 3rdparty */,
+				AB81ECF51331029900C13825 /* Buffer.h */,
+				AB81ECF61331029900C13825 /* Buffer.m */,
+				AB81ECF71331029900C13825 /* CnotiAudio.h */,
+				AB6678F6133256E9001D8BA4 /* MelodyPlayingThread.h */,
+				AB6678F7133256E9001D8BA4 /* MelodyPlayingThread.m */,
+				AB81ECFA1331029900C13825 /* Note.h */,
+				AB66790D13325790001D8BA4 /* Source.h */,
+				AB66790E13325790001D8BA4 /* Source.m */,
+				AB81ECFB1331029900C13825 /* SoundManagerCore.h */,
+				AB81ECFC1331029900C13825 /* SoundManagerCore.m */,
+				AB81ECFD1331029900C13825 /* SoundManagerIOS_Prefix.pch */,
+				AB81ECFE1331029900C13825 /* SoundManager.h */,
+				AB81ECFF1331029900C13825 /* SoundManager.m */,
+				AB81ED001331029900C13825 /* SoundPlayingThread.h */,
+				AB81ED011331029900C13825 /* SoundPlayingThread.m */,
+				AB81ED021331029900C13825 /* SynthesizeSingleton.h */,
+				AB8DF401133AB8C800259B30 /* Note.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* SoundManagerIOS_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		AB81ECF21331029900C13825 /* 3rdparty */ = {
+			isa = PBXGroup;
+			children = (
+				AB81ECF31331029900C13825 /* MyOpenALSupport.c */,
+				AB81ECF41331029900C13825 /* MyOpenALSupport.h */,
+			);
+			path = 3rdparty;
+			sourceTree = "<group>";
+		};
+		ABFBBF70133359860019C8A5 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				ABFBBF71133359940019C8A5 /* MelodyTesting */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		ABFBBF71133359940019C8A5 /* MelodyTesting */ = {
+			isa = PBXGroup;
+			children = (
+				ABEF6C8813336A66001108CF /* AppDelegate.h */,
+				ABEF6C8913336A66001108CF /* AppDelegate.m */,
+				ABEF6C8A13336A66001108CF /* Scene.h */,
+				ABEF6C8B13336A66001108CF /* Scene.m */,
+				ABFBBF7713335A160019C8A5 /* main.c */,
+				ABEF327E13336861001108CF /* TouchNode.h */,
+				ABEF327F13336861001108CF /* TouchNode.m */,
+			);
+			path = MelodyTesting;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB81ED071331029900C13825 /* CnotiAudio.h in Headers */,
+				AB81ED0A1331029900C13825 /* Note.h in Headers */,
+				AB81ED0E1331029900C13825 /* SoundManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* SoundManagerIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "SoundManagerIOS" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundManagerIOS;
+			productName = SoundManagerIOS;
+			productReference = D2AAC07E0554694100DB518D /* libSoundManagerIOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "SoundManagerIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* SoundManagerIOS */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* SoundManagerIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB81ED031331029900C13825 /* MyOpenALSupport.c in Sources */,
+				AB81ED061331029900C13825 /* Buffer.m in Sources */,
+				AB81ED0C1331029900C13825 /* SoundManagerCore.m in Sources */,
+				AB81ED0F1331029900C13825 /* SoundManager.m in Sources */,
+				AB81ED111331029900C13825 /* SoundPlayingThread.m in Sources */,
+				AB6678F9133256E9001D8BA4 /* MelodyPlayingThread.m in Sources */,
+				AB66791013325790001D8BA4 /* Source.m in Sources */,
+				AB8DF402133AB8C800259B30 /* Note.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/SoundManagerIOS.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SoundManagerIOS_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../libs/cocos2d-iphone-0.99.5/build/Release-iphonesimulator\"",
+				);
+				PRODUCT_NAME = SoundManagerIOS;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/SoundManagerIOS.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SoundManagerIOS_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../libs/cocos2d-iphone-0.99.5/build/Release-iphonesimulator\"",
+				);
+				PRODUCT_NAME = SoundManagerIOS;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "SoundManagerIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "SoundManagerIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
