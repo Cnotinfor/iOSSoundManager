@@ -12,3 +12,6 @@ build/
 *.mode2v3
 
 xcuserdata
+
+SoundManagerIOS_Test/Instruments
+SoundManagerIOS_Test/Rhythms
