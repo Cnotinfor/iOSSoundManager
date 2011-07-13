@@ -13,5 +13,6 @@ build/
 
 xcuserdata
 
+# Prevent sounds to be copied
 SoundManagerIOS_Test/Instruments
 SoundManagerIOS_Test/Rhythms
