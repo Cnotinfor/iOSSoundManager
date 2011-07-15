@@ -1,15 +1,9 @@
 //
-//  CheckSoundsThread.h
-//  SoundManagerIOS
-//
-//  Created by Tiago Correia on 11/03/15.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  SoundPlayingThread.h
 //
 
-//#import <Cocoa/Cocoa.h>
-
-
-// 10 milliseconds
+#import <Foundation/Foundation.h>
+#import "Macros.h"
 
 @interface SoundPlayingThread : NSThread {
 	ALuint   _source;

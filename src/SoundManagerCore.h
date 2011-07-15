@@ -1,3 +1,9 @@
+//
+//  SoundMangerCore.h
+//
+
+#import <Foundation/Foundation.h>
+#import "Macros.h"
 #import "time.h"
 #import "Buffer.h"
 #import "Melody.h"

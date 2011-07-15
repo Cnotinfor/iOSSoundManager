@@ -1,11 +1,12 @@
 //
 //  Melody.h
-//  LittleMozart
 //
+
 #ifndef MELODY
 #define MELODY
 
 #import <Foundation/Foundation.h>
+#import "Macros.h"
 #import "CnotiAudio.h"
 #import "Note.h"
 

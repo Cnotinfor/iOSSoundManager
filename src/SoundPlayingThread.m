@@ -1,13 +1,8 @@
 //
-//  CheckSoundsThread.m
-//  SoundManagerIOS
-//
-//  Created by Tiago Correia on 11/03/15.
-//  Copyright 2011 Cnotinfor. All rights reserved.
+//  SoundPlayingThread.m
 //
 /*
 	This class is thread to check if a sound finished playing
- 
 */
 
 #import "SoundPlayingThread.h"
@@ -33,7 +28,7 @@
 */
 - (id) initWithSource:(ALuint)source
 {
-	if( self = [super init] )
+	if( self == [super init] )
 	{
 //		[self setSource:source];
 		_source = source;

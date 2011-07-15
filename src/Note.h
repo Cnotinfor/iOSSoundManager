@@ -1,9 +1,9 @@
 //
 //  Note.h
-//  LittleMozart
 //
 
 #import <Foundation/Foundation.h>
+#import "Macros.h"
 #import "CnotiAudio.h"
 
 /**

@@ -1,10 +1,9 @@
 //
 //  Source.h
-//  SoundManagerIOS
 //
-//  Created by Tiago Correia on 11/03/17.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+
+#import <Foundation/Foundation.h>
+#import "Macros.h"
 
 #import "time.h"
 #import "Buffer.h"

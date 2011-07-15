@@ -1,11 +1,9 @@
 //
 //  SoundManger.h
-//  SoundManagerIOS
-//
-//  Created by Tiago Correia on 11/03/15.
-//  Copyright 2011 Cnotinfor. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import "Macros.h"
 #import "SoundManagerCore.h"
 #import "SynthesizeSingleton.h"
 

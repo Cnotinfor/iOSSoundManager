@@ -1,6 +1,5 @@
 //
 //  CnotiAudio.h
-//  LittleMozart
 //
 
 #ifndef CNOTIAUDIO

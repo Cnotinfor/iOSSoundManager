@@ -1,9 +1,5 @@
 //
 //  MelodyPlayingThread.m
-//  SoundManagerIOS
-//
-//  Created by Tiago Correia on 11/03/17.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import "MelodyPlayingThread.h"
@@ -23,7 +19,7 @@
 
 - (id)initWithSource:(ALuint*)sources
 {
-	if (self = [super init]) {
+	if (self == [super init]) {
 		_sources = sources;
 		_buffers = 0;
 	}

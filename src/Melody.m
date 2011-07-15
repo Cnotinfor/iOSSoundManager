@@ -1,6 +1,5 @@
 //
 //  Melody.m
-//  LittleMozart
 //
 
 #import "Melody.h"

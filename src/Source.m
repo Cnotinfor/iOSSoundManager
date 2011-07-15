@@ -1,9 +1,5 @@
 //
 //  Source.m
-//  SoundManagerIOS
-//
-//  Created by Tiago Correia on 11/03/17.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import "Source.h"
@@ -188,7 +184,7 @@
 //            break;
 //        }
         
-//        NSLog(@"checkSourceStateThread");
+//        DLog(@"checkSourceStateThread");
 
         }
 	}

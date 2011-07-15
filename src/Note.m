@@ -1,6 +1,5 @@
 //
 //  Note.m
-//  LittleMozart
 //
 
 #import "Note.h"

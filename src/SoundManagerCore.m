@@ -1,3 +1,7 @@
+//
+//  SoundMangerCore.h
+//
+
 #import "SoundManagerCore.h"
 #import "CnotiAudio.h"
 #import "Buffer.h"
@@ -59,7 +63,7 @@
 
 - (BOOL) initOpenAL
 {
-//	NSLog(@"[SoundManagerCore::initOpenAL]");
+	DLog(@"[SoundManagerCore::initOpenAL]");
 	
 	// Get the default sound device
 	_device = alcOpenDevice(NULL);
@@ -77,13 +81,13 @@
 		// Set the distance model to be used
 		alDistanceModel(AL_NONE);
 		
-//		NSLog(@"[SoundManagerCore::initOpenAL] Finished with sucess");
+		DLog(@"[SoundManagerCore::initOpenAL] Finished with sucess");
 		// Return YES as we have successfully initialized OpenAL
 		return YES;
 	}
 	
 	// We were unable to obtain a device for playing sound so tell the user and return NO.
-//	NSLog(@"[SoundManagerCore::initOpenAL] Error");
+//	DLog(@"[SoundManagerCore::initOpenAL] Error");
 	return NO;
 }
 
@@ -181,7 +185,7 @@
 	alcCloseDevice( _device );
 	[SoundManagerCore checkOpenALErrors];
 	
-//	NSLog( @"[SoundManager::releaseOpenAL] OpenAL resources released" );
+//	DLog( @"[SoundManager::releaseOpenAL] OpenAL resources released" );
 }
 
 
@@ -213,7 +217,7 @@
 - (void) setInstrumentsPath:(NSString*) path
 {
 	_instrumentsPath = path;
-//	NSLog(@"---->%@", _instrumentsPath);
+//	DLog(@"---->%@", _instrumentsPath);
 }
 
 
@@ -267,8 +271,8 @@
 //	[soundURL release];
 	if(!buffer)
 	{
-//		NSLog(@"[SoundManagerCore::loadWave] Error creating the buffer, resource = %@", path);
-//		NSLog(@"[SoundManagerCore::loadWave] Error creating the buffer, resource = %@", resource);
+//		DLog(@"[SoundManagerCore::loadWave] Error creating the buffer, resource = %@", path);
+//		DLog(@"[SoundManagerCore::loadWave] Error creating the buffer, resource = %@", resource);
 		return NULL;
 	}
     
@@ -305,7 +309,7 @@
 	
 	if(!buffer)
 	{
-//		NSLog(@"[SoundManager::loadSound] Error creating the buffer, resource = %@", resource);
+//		DLog(@"[SoundManager::loadSound] Error creating the buffer, resource = %@", resource);
 		return NO;
 	}
 	
@@ -362,7 +366,7 @@
 - (BOOL)loadPause:(int)tempo duration:(int)duration
 {
 	
-//	NSLog(@"loadPause");
+//	DLog(@"loadPause");
 	NSString* resource = [SoundManagerCore pauseName:tempo duration:duration];
 	
 	// Test if a sound with the name is already loaded;
@@ -376,7 +380,7 @@
 	
 	if(!buffer)
 	{
-//		NSLog(@"[SoundManager::loadPause] Error creating the buffer, resource = %@", resource);
+//		DLog(@"[SoundManager::loadPause] Error creating the buffer, resource = %@", resource);
 		return NO;
 	}
 	
@@ -401,7 +405,7 @@
 	
 	if(!buffer)
 	{
-//		NSLog(@"[SoundManager::loadNote] Error creating the buffer, resource = %@", resource);
+//		DLog(@"[SoundManager::loadNote] Error creating the buffer, resource = %@", resource);
 		return NO;
 	}
 	
@@ -427,7 +431,7 @@
 	
 	if(!buffer)
 	{
-//		NSLog(@"[SoundManager::loadNoteWithFilename] Error creating the buffer, resource = %@", resource);
+//		DLog(@"[SoundManager::loadNoteWithFilename] Error creating the buffer, resource = %@", resource);
 		return NO;
 	}
 	
@@ -466,7 +470,7 @@
 - (BOOL)loadRhythm:(int)rhythm tempo:(int)tempo variation:(int)variation
 {
 
-//	NSLog(@"loadRhtyhm rhythm: %d tempo: %d variation: %d", rhythm, tempo, variation);
+//	DLog(@"loadRhtyhm rhythm: %d tempo: %d variation: %d", rhythm, tempo, variation);
 	NSString* resource = [SoundManagerCore rhythmName:rhythm tempo:tempo variation:variation];
 	
 	// Test if a rhythm with the same name is already loaded;
@@ -480,7 +484,7 @@
 	
 	if(!buffer)
 	{
-//		NSLog(@"[SoundManager::loadRhythm] Error creating the buffer, resource = %@", resource);
+//		DLog(@"[SoundManager::loadRhythm] Error creating the buffer, resource = %@", resource);
 		return NO;
 	}
 	
@@ -596,8 +600,8 @@
 {	
 	Source* source = [self nextAvailableSource];
     
-    NSLog(@"SoundManagerCore: playSound: %d", signalsEnabled);
-    NSLog(@"SoundManagerCore: playSound: source: %@", source);
+    DLog(@"SoundManagerCore: playSound: %d", signalsEnabled);
+    DLog(@"SoundManagerCore: playSound: source: %@", source);
     
     if (signalsEnabled == FALSE) {
         source.emitSignal = FALSE;
@@ -606,8 +610,8 @@
         source.emitSignal = TRUE;
     }
     
-    NSLog(@"SoundManagerCore: playSound: %@", name);
-	NSLog(@"SoundManagerCore: playSound: playBuffer %d:", [source playBuffer:[_buffers valueForKey:name] withName:name loop:loop]);
+    DLog(@"SoundManagerCore: playSound: %@", name);
+    [source playBuffer:[_buffers valueForKey:name] withName:name loop:loop];
 	
 	if (signalsEnabled) {
 		[[NSNotificationCenter defaultCenter] postNotificationName:SIGNAL_SOUND_STARTED object:nil];	
@@ -637,7 +641,7 @@
 		Source* source = [_soundSources objectAtIndex:i];
 		
 		if ([source.name isEqualToString:name]) {
-            NSLog(@"SoundManagerCore: stopSound: source.name %@:", source.name);
+            DLog(@"SoundManagerCore: stopSound: source.name %@:", source.name);
 
 			[source stop];
 		}
@@ -715,11 +719,11 @@
 		Note* currentNote = [melody.notesList objectAtIndex: i];
 		
 		if (currentNote.note == -1) {
-//			NSLog(@"load Pause");
+//			DLog(@"load Pause");
 			[self loadPause:[melody tempo] duration:[currentNote duration]];
 		}
 		else {			
-//			NSLog(@"load Note");
+//			DLog(@"load Note");
 			[self loadNote:[melody instrument] tempo:[melody tempo] height:[currentNote note] duration:[currentNote duration] octave:[currentNote octave]];	
 		}
 	}
@@ -760,7 +764,7 @@
 		alSourceUnqueueBuffers( _melodySources[0], _numberOfNotes, foo);
 		if( [SoundManagerCore checkOpenALErrors] )
 		{
-//			NSLog(@"alSourceUnqueueBuffers Error - 1");
+//			DLog(@"alSourceUnqueueBuffers Error - 1");
 		}	
 	}
 	
@@ -781,11 +785,11 @@
 		
 		Buffer* buffer;
 		if (currentNote.note==Note_PAUSE) {
-//			NSLog(@"buffer -1");
+//			DLog(@"buffer -1");
 			buffer = [self pauseBuffer:[melody tempo] duration:[currentNote duration]];	
 		}
 		else {
-//			NSLog(@"buffer +1");
+//			DLog(@"buffer +1");
 			buffer = [self noteBuffer:[melody instrument] tempo:[melody tempo] height:[currentNote note] duration:[currentNote duration] octave:[currentNote octave]];	
 		}
 		
@@ -796,7 +800,7 @@
 	// Queue the buffers in the source 0 = melody source
 	alSourceQueueBuffers( _melodySources[0], _numberOfNotes ,_melodyBuffers );
 	if ([SoundManagerCore checkOpenALErrors]) {
-//		NSLog(@"alSourceQueueBuffers Error - 2");
+//		DLog(@"alSourceQueueBuffers Error - 2");
 	}
 	
 	// For each rhythm, a buffer must be associated to the source
@@ -814,7 +818,7 @@
 			// associate the buffer with the source
 			alSourcei(_melodySources[_melodySourcesPlaying], AL_BUFFER, [buffer bufferId]);
 			if ([SoundManagerCore checkOpenALErrors]) {
-//				NSLog(@"alSourcei Error - 3");
+//				DLog(@"alSourcei Error - 3");
 			}
 			
 			_melodySourcesPlaying++; // increase source count usage
@@ -831,7 +835,7 @@
 	// set loop mode for the melody source
 	alSourcei(_melodySources[0], AL_LOOPING, (loop ? AL_TRUE : AL_FALSE) );
 	if ([SoundManagerCore checkOpenALErrors]) {
-//		NSLog(@"alSourcei Error - 4");
+//		DLog(@"alSourcei Error - 4");
 	}
 	
 	// rhythms are always in loop mode
@@ -839,7 +843,7 @@
 	{
 		alSourcei(_melodySources[i], AL_LOOPING, AL_TRUE );
 		if ([SoundManagerCore checkOpenALErrors]) {
-//			NSLog(@"alSourcei Error - 5");
+//			DLog(@"alSourcei Error - 5");
 		}
 	}
 	
@@ -849,7 +853,7 @@
 	
 	if( [SoundManagerCore checkOpenALErrors] )
 	{
-//		NSLog(@"alSourcei Error - 6");
+//		DLog(@"alSourcei Error - 6");
 		return FALSE;
 	}
 	
@@ -869,12 +873,11 @@
 - (void)stopMelody
 {
 	
-//	NSLog(@"stopMelody - 1");
+//	DLog(@"stopMelody - 1");
 	alSourceStopv(_melodySourcesPlaying, _melodySources);
 
 	if( [SoundManagerCore checkOpenALErrors] )
 	{
-//		NSLog(@"[SoundManagerCore::stopMelody error] melodysourcesplaying: %d", _melodySourcesPlaying);
 
 	}	
 	// emit signal finish melody
@@ -888,7 +891,7 @@
 	
 	// Beware simultaneos access stop and play
 	
-//	NSLog(@"stopMelody - 2");
+//	DLog(@"stopMelody - 2");
 }
 
 -(void) unqueueBuffers {
@@ -907,7 +910,7 @@
 	
 	if ([SoundManagerCore checkOpenALErrors])
 	{
-//		NSLog(@"isMelodyPlaying Error");
+//		DLog(@"isMelodyPlaying Error");
 		return FALSE;
 	}
 	
@@ -917,7 +920,7 @@
 
 - (BOOL)isMelodyPlayingThread {
 	
-//	NSLog(@"[SoundManagerCore::isMelodyPlayingThread - 1]");
+//	DLog(@"[SoundManagerCore::isMelodyPlayingThread - 1]");
 	
 	int buffersProcessed = 0;
 	ALint value; // To get the value of the number of buffers processed by the source
@@ -929,7 +932,7 @@
 	
 	do
 	{
-//		NSLog(@"[SoundManagerCore::isMelodyPlayingThread - 2]");
+//		DLog(@"[SoundManagerCore::isMelodyPlayingThread - 2]");
 		alGetSourcei(_melodySources[0], AL_BUFFERS_PROCESSED, &value);
 		
 		if ([SoundManagerCore checkOpenALErrors])
@@ -950,7 +953,7 @@
 	}
 	while ([self isMelodyPlaying]);
 	
-//	NSLog(@"[SoundManagerCore::isMelodyPlayingThread - 3]");
+//	DLog(@"[SoundManagerCore::isMelodyPlayingThread - 3]");
 	
 	// emit signal finish melody
 	[self stopMelody];
@@ -1170,19 +1173,19 @@
 		case AL_NO_ERROR:
 			return NO;
 		case AL_INVALID_NAME:
-			NSLog( @"[SoundManager::error] Error: a bad name (ID) was passed to an OpenAL function" );
+			DLog( @"[SoundManager::error] Error: a bad name (ID) was passed to an OpenAL function" );
 			return YES;
 		case AL_INVALID_ENUM:
-			NSLog( @"[SoundManager::error] Error: an invalid enum value was passed to an OpenAL function" );
+			DLog( @"[SoundManager::error] Error: an invalid enum value was passed to an OpenAL function" );
 			return YES;
 		case AL_INVALID_VALUE:
-			NSLog( @"[SoundManager::error] Error: an invalid value was passed to an OpenAL function" );
+			DLog( @"[SoundManager::error] Error: an invalid value was passed to an OpenAL function" );
 			return YES;
 		case AL_INVALID_OPERATION:
-			NSLog( @"[SoundManager::error] Error: the requested operation is not valid" );
+			DLog( @"[SoundManager::error] Error: the requested operation is not valid" );
 			return YES;
 		case AL_OUT_OF_MEMORY:
-			NSLog( @"[SoundManager::error] Error: the requested operation resulted in OpenAL running out of memory" );
+			DLog( @"[SoundManager::error] Error: the requested operation resulted in OpenAL running out of memory" );
 			return YES;
 	}
 	

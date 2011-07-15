@@ -1,11 +1,8 @@
 //
 //  Buffer.h
-//  SoundManagerIOS
 //
-//  Created by Tiago Correia on 11/03/15.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
+#import <Foundation/Foundation.h>
+#import "Macros.h"
 
 @interface Buffer : NSObject
 {
