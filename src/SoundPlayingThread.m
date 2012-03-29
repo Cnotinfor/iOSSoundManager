@@ -79,7 +79,7 @@
 		}
 		
 		// Small delay on the thread, so it doesn't use so much CPU
-		sleepForTimeInterval:0.01; // 10 miliseconds
+//		sleepForTimeInterval:0.01; // 10 miliseconds
 	}
 	while( ![self isCancelled] );
 	

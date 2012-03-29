@@ -37,6 +37,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(SoundManager);
 
 - (BOOL)loadSound:(NSString*)resource;
 
+- (void) setSoundVolume:(NSString*)resource volume:(float)aVolume;
+
 - (void)releaseSound:(NSString*)name;
 - (void)releaseAllSounds;
 

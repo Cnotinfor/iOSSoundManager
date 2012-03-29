@@ -10,10 +10,10 @@
  */
 enum EnumInstrument
 {
-	Instrument_PIANO=1,
+	Instrument_PIANO=1,//--> NOT AVAILABLE IN THIS VERSION
 	Instrument_FLUTE=2,
-	Instrument_VIOLIN=3,
-	Instrument_XYLOPHONE=4, //--> NOT AVAILABLE IN THIS VERSION
+	Instrument_VIOLIN=3,//--> NOT AVAILABLE IN THIS VERSION
+	Instrument_XYLOPHONE=4,//--> NOT AVAILABLE IN THIS VERSION
 	Instrument_TRUMPET=5
 };
 
@@ -26,8 +26,8 @@ enum EnumRhythm
 	Rhythm_BASS_DRUM=1,    // Bombo --> NOT AVAILABLE IN THIS VERSION
 	Rhythm_CONGAS=2, //--> NOT AVAILABLE IN THIS VERSION
 	Rhythm_TAMBOURINE=3,   // Pandeireta
-	Rhythm_TRIANGLE=4,
-	Rhythm_BEAT_BOX=5
+	Rhythm_TRIANGLE=4,//--> NOT AVAILABLE IN THIS VERSION
+	Rhythm_BEAT_BOX=5//--> NOT AVAILABLE IN THIS VERSION
 };
 
 /**

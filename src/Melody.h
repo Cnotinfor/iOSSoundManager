@@ -33,6 +33,7 @@
 	int duration;
 	int date;
 	BOOL isChanged;
+  	BOOL playRhythms;
 
 	Staff* sharedStaff;
 }
@@ -49,6 +50,7 @@
 @property (assign) NSMutableArray* rhythms;
 @property (readwrite) int numberOfNotes;
 @property (readwrite) BOOL isChanged;
+@property (readwrite) BOOL playRhythms;
 @property int duration;
 
 - (id) init: (NSString*)aMelodyName

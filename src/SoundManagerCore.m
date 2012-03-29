@@ -251,12 +251,21 @@
 		directory = path;	
 	}
 	
-	NSString* r = [bundle pathForResource:resource ofType:@"wav" inDirectory:directory];
+	NSString* r;
+    r = [bundle pathForResource:resource ofType:@"wav" inDirectory:directory];
 	if( r == nil )
 	{
-		return NULL;
+        r = [bundle pathForResource:resource ofType:@"caf" inDirectory:directory];
 	}
+	if( r == nil )
+	{
+        r = [bundle pathForResource:resource ofType:@"aifc" inDirectory:directory];
+	}
+    if ( r == nil ) {
+        return NULL;
+    }
 	
+    DLog(@"loadWave soundFileURL: %@", r);
 	CFURLRef soundURL = (CFURLRef)[NSURL fileURLWithPath:r];
 	
 	
@@ -317,6 +326,13 @@
 	[_buffers setValue:buffer forKey:name];
 	
 	return YES;
+}
+
+
+- (void) setSoundVolume:(NSString*)resource volume:(float)aVolume
+{
+    DLog(@"resource: %@", resource);
+    [[_buffers valueForKey:resource] setVolume:aVolume];
 }
 
 
@@ -744,7 +760,6 @@
 
 - (BOOL)playMelody:(Melody*)melody 
 {
-	
 	return [self playMelody:melody loop:FALSE];
 }
 
@@ -804,11 +819,12 @@
 	}
 	
 	// For each rhythm, a buffer must be associated to the source
+    DLog(@"playRhythms: %d", melody.playRhythms);
 	_melodySourcesPlaying = 1; // to count the number of rhythms associated with a source
 	for (int j = 0; j < NUM_AVAILABLE_RHYTHMS; j++)
 	{
 		int variation = [[[melody rhythms] objectAtIndex:j] intValue];
-		if( variation >= 0 )
+		if( variation >= 0 && melody.playRhythms)
 		{
 			// Get rhythm buffer
 			Buffer* buffer = [self rhythmBuffer:j tempo:[melody tempo] variation:variation];
@@ -974,6 +990,8 @@
 	
 	NSString* completeNoteFilename = [NSString stringWithFormat:@"%d_%d_%d_%d_%d", instrument, tempo, duration, octave, height]; 
 	
+    DLog(@"playNote completeNoteFilename: %@", completeNoteFilename);
+    
 	Source* source = [self nextAvailableSource];
 	[source playBuffer:[_buffersNotes valueForKey:completeNoteFilename] withName:completeNoteFilename loop:FALSE];
 }
@@ -981,6 +999,8 @@
 
 - (void)playNoteWithFilename:(NSString*)filename loop:(BOOL)loop{
 	
+    DLog(@"playNote filename: %@", filename);
+
 	Source* source = [self nextAvailableSource];
 	[source playBuffer:[_buffersNotes valueForKey:filename] withName:filename loop:loop];
 }
@@ -1197,7 +1217,7 @@
 {
 	NSArray* keys = [dictionary allKeys];
 	
-	for(int i = 0; i < [keys count]; i++)
+	for(int i = 0; i < (int)[keys count]; i++)
 	{
 		NSString* key = (NSString*) [keys objectAtIndex:i];
 		
@@ -1219,7 +1239,7 @@
 {
 	NSArray* keys = [dictionary allKeys];
 	
-	for(int i = 0; i < [keys count]; i++)
+	for(int i = 0; i < (int)[keys count]; i++)
 	{
 		NSString* key = (NSString*) [keys objectAtIndex:i];
 		

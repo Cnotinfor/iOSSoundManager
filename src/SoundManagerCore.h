@@ -111,6 +111,7 @@
 
 - (BOOL)loadSound:(NSString*)resource;
 - (BOOL)loadSound:(NSString*)resource name:(NSString*)name;
+- (void) setSoundVolume:(NSString*)resource volume:(float)aVolume;
 
 - (BOOL)loadInstrument:(int)instrument tempo:(int)tempo;
 - (BOOL)loadPauses:(int)tempo;

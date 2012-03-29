@@ -12,7 +12,6 @@
 SYNTHESIZE_SINGLETON_FOR_CLASS(SoundManager)
 
 
-//TODO
 @synthesize isMelodyPlaying;
 
 #pragma mark -
@@ -92,6 +91,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SoundManager)
 {
 	//TODO
 	return [_core loadSound:resource name:resource];
+}
+
+- (void) setSoundVolume:(NSString*)resource volume:(float)aVolume
+{
+    [_core setSoundVolume: resource volume:aVolume];
 }
 
 

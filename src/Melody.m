@@ -20,15 +20,14 @@
 @synthesize rhythms;
 @synthesize date;
 @synthesize isChanged;
+@synthesize playRhythms;
 
 /**
  Initialize a new Melody Object with default settings
  @returns Melody object with default settings
  */
 - (id) init{
-	if( (self=[super init] )) {
-		
-		// TODO NOT-CURRENTLY-USED
+	if( self = [super init] ) {
 		name = [[NSString alloc] initWithString:@"defaultMelodyName"];
 		
 		instrument = (enum EnumInstrument) Instrument_FLUTE;
@@ -48,6 +47,7 @@
 				   [NSNumber numberWithInt:-1], nil] retain];
 		
 		isChanged = FALSE;
+        playRhythms = TRUE;
 		
 	}
 	return self;
@@ -82,7 +82,7 @@
  Add a note to the melody.
  @param aNote Note object to add to melody
  */
-- (BOOL) addNote: (Note*)aNote {
+- (BOOL)addNote:(Note*)aNote {
 	[notesList addObject:aNote];
 	numberOfNotes++;
 	
@@ -176,7 +176,7 @@
 - (int)numberOfSelectedRhythms {
 	int counter = 0;
 	
-	for (int i=0; i<[rhythms count]; i++) {
+	for (int i=0; i<(int)[rhythms count]; i++) {
 		if ([[rhythms objectAtIndex:i] intValue]!=-1) {
 			counter++;
 		}

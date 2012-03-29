@@ -91,7 +91,12 @@
 	
     switch(formatType) {
         case Note_DO:
-            result = @"do";
+            if (octave == 3) {
+                result = @"do";                
+            }
+            else {
+                result = @"do_agudo";  
+            }
             break;
         case Note_RE:
             result = @"re";

@@ -5,9 +5,6 @@
 #import "Source.h"
 #import "SoundManager.h"
 
-
-#define SLEEP_INTERVAL 0.1
-
 @implementation Source
 
 @synthesize name = _name;
@@ -130,7 +127,7 @@
 	
 	alGetError();
 	alSourcei(_source, AL_BUFFER, [buffer bufferId]);
-	
+	alSourcef(_source, AL_GAIN, [buffer volume]);
 	alSourcei(_source, AL_LOOPING, loop ? AL_TRUE : AL_FALSE);
 	alSourcef(_source, AL_PITCH, 1.0);
     
@@ -150,8 +147,6 @@
 	{
         @synchronized(self){
             [NSThread detachNewThreadSelector:@selector(checkSourceStateThread:) toTarget:self withObject:name];
-            //        _thread = [[NSThread alloc] initWithTarget: self selector:@selector(checkSourceStateThread:) object: name];
-            //        [_thread start];
         }
 	}
 	
@@ -176,16 +171,6 @@
         alGetError();
 		alGetSourcei( _source, AL_SOURCE_STATE, &state );
         alGetError();
-        
-		// Small delay on the thread, so it doesn't use so much CPU
-        sleepForTimeInterval:SLEEP_INTERVAL; // 10 miliseconds
-        
-//        if ([_thread isCancelled]) {
-//            break;
-//        }
-        
-//        DLog(@"checkSourceStateThread");
-
         }
 	}
 	while( state == AL_PLAYING);
