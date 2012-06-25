@@ -12,8 +12,6 @@
 SYNTHESIZE_SINGLETON_FOR_CLASS(SoundManager)
 
 
-@synthesize isMelodyPlaying;
-
 #pragma mark -
 #pragma mark Initializations
 
@@ -354,14 +352,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SoundManager)
 - (BOOL)playMelody:(Melody*)melody loop:(BOOL)loop{
 	
 	return [_core playMelody:melody loop:loop];
-	isMelodyPlaying = TRUE;
+	_isMelodyPlaying = TRUE;
 }
 
 
 - (void)stopMelody{
 	
 	[_core stopMelody];
-	isMelodyPlaying = FALSE;
+	_isMelodyPlaying = FALSE;
 	
 }
 
@@ -371,13 +369,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SoundManager)
 
 - (void)stopMelody:(Melody*)melody{
 	[_core stopMelody];
-	isMelodyPlaying = FALSE;
+	_isMelodyPlaying = FALSE;
 }
 
 
 - (BOOL)isMelodyPlaying{
 	
 	return [_core isMelodyPlaying];
+}
+- (void)isMelodyPlaying:(BOOL)isMelodyPlaying
+{    
+    _isMelodyPlaying = isMelodyPlaying;
 }
 
 - (void)playNoteWithFilename:(NSString*)filename loop:(BOOL)loop {

@@ -965,7 +965,7 @@
 			}			
 		}
 		
-	sleepForTimeInterval:0.0001;
+	//sleepForTimeInterval:0.0001;
 	}
 	while ([self isMelodyPlaying]);
 	

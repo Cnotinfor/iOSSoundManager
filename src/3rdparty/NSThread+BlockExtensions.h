@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-
+#ifndef __BLOCKS_EXTENSIONS__
+#define __BLOCKS_EXTENSIONS__ 1
 @interface NSThread (BlocksExtensions)
 
 - (void)performBlock:(void (^)())block;
@@ -16,3 +17,4 @@
 + (void)performBlockInBackground:(void (^)())block;
 
 @end
+#endif

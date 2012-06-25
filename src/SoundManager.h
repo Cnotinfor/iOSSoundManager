@@ -15,13 +15,13 @@
 
 	//TODO
 	BOOL signalsEnabled;
-	BOOL isMelodyPlaying;
+	BOOL _isMelodyPlaying;
 }
 
 SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(SoundManager);
 
 
-@property (readwrite) BOOL isMelodyPlaying;
+@property (readwrite, setter = isMelodyPlaying:, getter = isMelodyPlaying) BOOL isMelodyPlaying;
 
 
 - (id)init;
