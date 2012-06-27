@@ -21,6 +21,7 @@
 @synthesize date;
 @synthesize isChanged;
 @synthesize playRhythms;
+@synthesize beenSaved;
 
 /**
  Initialize a new Melody Object with default settings
