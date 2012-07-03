@@ -147,8 +147,8 @@
             result = @"UNKNOWN_DURATION";
 			break;
 		default:
-            [NSException raise:NSGenericException format:@"Unexpected FormatType."];
-	}
+            result = @"UNKNOWN_DURATION";
+        }
 	return result;
 }
 
