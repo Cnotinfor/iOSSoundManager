@@ -89,7 +89,7 @@
 	ALint state;
 	
 	alGetSourcei(_source, AL_SOURCE_STATE, &state );
-	
+	//return (state ==AL_STOPPED?true:false);
 	return (state != AL_PLAYING && state != AL_PAUSED) ? YES : NO;
 }
 

@@ -614,6 +614,10 @@
 
 - (void)playSound:(NSString*)name loop:(BOOL)loop
 {	
+    if ([self isSoundPlaying:name])
+    {
+        [self stopSound:name];
+    }
 	Source* source = [self nextAvailableSource];
     
     DLog(@"SoundManagerCore: playSound: %d", signalsEnabled);
@@ -991,7 +995,10 @@
 	NSString* completeNoteFilename = [NSString stringWithFormat:@"%d_%d_%d_%d_%d", instrument, tempo, duration, octave, height]; 
 	
     DLog(@"playNote completeNoteFilename: %@", completeNoteFilename);
-    
+    if ([self isSoundPlaying:completeNoteFilename])
+    {
+        [self stopSound:completeNoteFilename];
+    }
 	Source* source = [self nextAvailableSource];
 	[source playBuffer:[_buffersNotes valueForKey:completeNoteFilename] withName:completeNoteFilename loop:FALSE];
 }
@@ -1000,7 +1007,11 @@
 - (void)playNoteWithFilename:(NSString*)filename loop:(BOOL)loop{
 	
     DLog(@"playNote filename: %@", filename);
-
+    if ([self isSoundPlaying:filename])
+    {
+        [self stopSound:filename];
+    }
+    
 	Source* source = [self nextAvailableSource];
 	[source playBuffer:[_buffersNotes valueForKey:filename] withName:filename loop:loop];
 }
@@ -1078,33 +1089,34 @@
  */
 - (Source*)nextAvailableSource
 {
-	// Check is there is any source available
-	//	ALint state;
-	for(int i=0;i < MAX_AL_SOURCES; i++)
-	{
-		Source* source = [_soundSources objectAtIndex:i];
-		
-		if ([source isAvailable])
-		{
-			return source;
-		}
-	}
-	
-	// No sources available, so the first to be played will be used;
-	// search in
-	time_t first = time(NULL); // Current time
-	int sourcePos = 0;
-	for(int i=0;i < MAX_AL_SOURCES; i++)
-	{
-		Source* source = [_soundSources objectAtIndex:i];
-		
-		if([source timeLastUsed] < first) // if used before
-		{
-			first = [source timeLastUsed];
-			sourcePos = i; // source position
-		}
-	}
-	return [_soundSources objectAtIndex:sourcePos];
+    // Check is there is any source available
+    //	ALint state;
+    for(int i=0;i < MAX_AL_SOURCES; i++)
+    {
+        Source* source = [_soundSources objectAtIndex:i];
+        
+        if ([source isAvailable])
+        {
+            return source;
+        }
+    }
+    DInfoLog(@"miss out");
+    
+    // No sources available, so the first to be played will be used;
+    // search in
+    time_t first = time(NULL); // Current time
+    int sourcePos = 0;
+    for(int i=0;i < MAX_AL_SOURCES; i++)
+    {
+        Source* source = [_soundSources objectAtIndex:i];
+        
+        if([source timeLastUsed] < first) // if used before
+        {
+            first = [source timeLastUsed];
+            sourcePos = i; // source position
+        }
+    }
+    return [_soundSources objectAtIndex:sourcePos];
 }
 
 
