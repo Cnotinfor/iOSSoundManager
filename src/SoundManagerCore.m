@@ -245,7 +245,7 @@
 	NSBundle* bundle = [NSBundle mainBundle];
 	
 	// Test if the path is valid
-	NSString* directory = [NSString stringWithString:@""];
+	NSString* directory = @"";
 	if (path != nil)
 	{
 		directory = path;	
