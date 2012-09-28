@@ -946,8 +946,9 @@
 	ALint value; // To get the value of the number of buffers processed by the source
 	
 	//emit signal first note;
-	if (signalsEnabled) {
-		[[NSNotificationCenter defaultCenter] postNotificationName:SIGNAL_NOTE_STARTED object:nil];
+	if (signalsEnabled)
+    {
+		[[NSNotificationCenter defaultCenter] postNotificationName:SIGNAL_NOTE_STARTED object:[NSNumber numberWithInt:buffersProcessed]];
 	}
 	
 	do
@@ -964,15 +965,16 @@
 		{
 			buffersProcessed = value ;
 			//emit signal;
-			if (signalsEnabled) {
-				[[NSNotificationCenter defaultCenter] postNotificationName:SIGNAL_NOTE_STARTED object:nil];
+			if (signalsEnabled)
+            {
+				[[NSNotificationCenter defaultCenter] postNotificationName:SIGNAL_NOTE_STARTED object:[NSNumber numberWithInt:buffersProcessed]];
 			}			
 		}
 		
 	//sleepForTimeInterval:0.0001;
 	}
 	while ([self isMelodyPlaying]);
-	
+
 //	DLog(@"[SoundManagerCore::isMelodyPlayingThread - 3]");
 	
 	// emit signal finish melody
